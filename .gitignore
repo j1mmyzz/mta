@@ -1,0 +1,33 @@
+# Python-specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Sublime Text-specific
+*.sublime-project
+*.sublime-workspace
+
+# PyCharm-specific
+.idea/
+
+# Visual Studio Code-specific
+.vscode/
+
+# macOS-specific
+.DS_Store
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment file
+.env
