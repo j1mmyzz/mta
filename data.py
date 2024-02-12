@@ -1,7 +1,6 @@
-import csv
+import csv, os
 from underground import metadata, SubwayFeed
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
