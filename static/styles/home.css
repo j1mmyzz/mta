@@ -1,0 +1,50 @@
+body {
+  background-color: cyan;
+}
+
+.train-line {
+  border-radius: 50px;
+  border: none;
+  width: 90px;
+  height: 90px;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+
+.red {
+  background-color: #ee352e;
+}
+
+.dark-green {
+  background-color: #00933c;
+}
+
+.purple {
+  background-color: #b933ad;
+}
+
+.blue {
+  background-color: #0039a6;
+}
+
+.yellow {
+  background-color: #fccc0a;
+  font: black;
+}
+
+.orange {
+  background-color: #ff6319;
+}
+
+.gray {
+  background-color: #a7a9ac;
+}
+
+.light-green {
+  background-color: #6cbe45;
+}
+
+.brown {
+  background-color: #996633;
+}
