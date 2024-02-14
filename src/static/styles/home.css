@@ -1,15 +1,33 @@
 body {
   background-color: #dcdcdc;
 }
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+
+.subway-lines {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+}
 
 .train-line {
   border-radius: 50px;
   border: none;
   width: 90px;
   height: 90px;
-  font-size: 40px;
+  font-size: 55px;
   font-weight: bolder;
   color: white;
+  margin: 5px;
 }
 
 .red {
@@ -30,7 +48,7 @@ body {
 
 .yellow {
   background-color: #fccc0a;
-  font: black;
+  color: black;
 }
 
 .orange {
@@ -47,4 +65,9 @@ body {
 
 .brown {
   background-color: #996633;
+}
+
+.note {
+  display: flex;
+  justify-content: center;
 }

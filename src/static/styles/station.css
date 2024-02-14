@@ -1,0 +1,25 @@
+body {
+  background-color: #dcdcdc;
+}
+
+.times {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+
+.train-line {
+  border-radius: 50px;
+  border: none;
+  width: 90px;
+  height: 90px;
+  font-size: 55px;
+  font-weight: bolder;
+  color: white;
+  margin: 5px;
+}

@@ -35,9 +35,33 @@ def data(line):
                 )
 
 
-avaiable_lines = ["1","2","3","4","5","6","7","A","B","C","D","E","F","G","J","L","M","N","Q","R","S","W","Z"]
+avaiable_lines = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "J",
+    "L",
+    "M",
+    "N",
+    "Q",
+    "R",
+    "S",
+    "W",
+    "Z",
+]
 subway_line = input("Enter a subway line: ")
 if subway_line in avaiable_lines:
     data(subway_line)
 else:
-  print("Invalid line")
+    print("Invalid line")
