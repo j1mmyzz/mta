@@ -13,10 +13,6 @@
   <body class="main-content">
     <div class="times">
       <div class="line-logo">
-        <!--this don't work bruh-->
-        {% from main import logo_colors %} {% if train_line == 'N': %} {%
-        print(logo_colors(train_line))%}
-
         <div class="train-line">{{ train_line }}</div>
       </div>
       <div class="uptown">
@@ -31,5 +27,16 @@
         soluta odit minus dolorum! Quos ipsa amet omnis nisi minus vel commodi.
       </div>
     </div>
+    <script>
+      console.log(document.title);
+
+      const subwayLines = document.querySelector(".train-line");
+      subwayLines.style.cssText = subwayLines.style.cssText =
+        "border-radius: 50px; border: none; width: 90px; height: 90px; font-size: 55px; font-weight: bolder; color: white; display: flex; justify-content: center; align-items: center; font-family: Arial;";
+      if (["N", "Q", "R", "W"].includes(document.title)) {
+        document.querySelector(".train-line").style.color = "black";
+        document.querySelector(".train-line").style.backgroundColor = "#fccc0a";
+      }
+    </script>
   </body>
 </html>

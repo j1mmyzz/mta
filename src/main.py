@@ -22,19 +22,3 @@ def bus_schedule(bus_line):
 if __name__ == "__main__":
     app.debug = True
     app.run()
-
-
-def logo_colors(line_color):
-    colors = {
-        "red": "#ee352e",
-        "dark_green": "#00933c",
-        "purple": "#b933ad",
-        "blue": "#0039a6",
-        "yellow": "#fccc0a",
-        "orange": "#ff6319",
-        "gray": "#a7a9ac",
-        "light-green": "#6cbe45",
-        "brown": "#996633",
-    }
-    if line_color in colors.keys():
-        return colors[line_color]
