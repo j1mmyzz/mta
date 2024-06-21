@@ -15,27 +15,60 @@
       <div class="line-logo">
         <div class="train-line">{{ train_line }}</div>
       </div>
-      <div class="uptown">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore est
-        inventore suscipit ipsam fugiat natus dolorem consectetur eaque ea
-        maxime tempore, nobis temporibus eum totam veritatis minima nisi sunt
-        iste!
-      </div>
-      <div class="downtown">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sequi
-        eligendi omnis nisi ducimus. Quisquam temporibus consequatur quas,
-        soluta odit minus dolorum! Quos ipsa amet omnis nisi minus vel commodi.
-      </div>
+      <div class="stations">dfd</div>
     </div>
     <script>
-      console.log(document.title);
+      // get the data from data.py
+      // your_script.js
+      const subwayLine = document.title;
+      fetch(`/get_data/${subwayLine}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const stops = data.map((entry) => {
+            const validStations = entry[1].filter(
+              (station) => station.stop !== null
+            );
+            return validStations.map((station) => station.stop);
+          });
+          console.log(stops);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
 
       const subwayLines = document.querySelector(".train-line");
       subwayLines.style.cssText = subwayLines.style.cssText =
         "border-radius: 50px; border: none; width: 90px; height: 90px; font-size: 55px; font-weight: bolder; color: white; display: flex; justify-content: center; align-items: center; font-family: Arial;";
+      if (["1", "2", "3"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#ee352e";
+      }
+      if (["4", "5", "6"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#00933c";
+      }
+      if (["7"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#b933ad";
+      }
+      if (["A", "C", "E"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#0039a6";
+      }
+      if (["A", "C", "E"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#0039a6";
+      }
       if (["N", "Q", "R", "W"].includes(document.title)) {
         document.querySelector(".train-line").style.color = "black";
         document.querySelector(".train-line").style.backgroundColor = "#fccc0a";
+      }
+      if (["B", "D", "F", "M"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#ff6319";
+      }
+      if (["L"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#a7a9ac";
+      }
+      if (["G"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#6cbe45";
+      }
+      if (["J", "Z"].includes(document.title)) {
+        document.querySelector(".train-line").style.backgroundColor = "#996633";
       }
     </script>
   </body>

@@ -23,3 +23,11 @@ body {
   color: white;
   margin: 5px;
 }
+
+.stations {
+  border-style: double;
+  padding: 10px;
+  border-radius: 20px;
+  width: 70vw;
+  height: 70vh;
+}
