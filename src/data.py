@@ -21,20 +21,6 @@ def stop_name(stopID):
                 return name
 
 
-# def data(line):
-#     feed = SubwayFeed.get(line, api_key=API_KEY)
-#     data = feed.extract_stop_dict()
-#     for route, stops_data in data.items():
-#         # This might make missing stops. If it doesn't delete this comment.
-#         if route == line:
-#             print(f"Route: {route}")
-#             for stop, arrival_times in stops_data.items():
-#                 formatted_times = [time.strftime("%I:%M %p") for time in arrival_times]
-#                 print(
-#                     f"\tStop: {stop_name(stop)} Arrival: {', '.join(formatted_times)}"
-#                 )
-
-
 def data(line):
     feed = SubwayFeed.get(line, api_key=API_KEY)
     data = feed.extract_stop_dict()
@@ -56,35 +42,3 @@ def data(line):
             result.append(route_info)
 
     return result
-
-
-# avaiable_lines = [
-#     "1",
-#     "2",
-#     "3",
-#     "4",
-#     "5",
-#     "6",
-#     "7",
-#     "A",
-#     "B",
-#     "C",
-#     "D",
-#     "E",
-#     "F",
-#     "G",
-#     "J",
-#     "L",
-#     "M",
-#     "N",
-#     "Q",
-#     "R",
-#     "S",
-#     "W",
-#     "Z",
-# ]
-# subway_line = input("Enter a subway line: ")
-# if subway_line in avaiable_lines:
-#     data(subway_line)
-# else:
-#     print("Invalid line")
