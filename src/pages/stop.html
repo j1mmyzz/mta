@@ -10,6 +10,14 @@
     <a id="backLink" href="../">
       <button class="back-button">Back</button>
     </a>
+
+    <div class="uptown">
+      <!-- For Uptown Stops -->
+    </div>
+    <div class="downtown">
+      <!-- For Downtown Stops-->
+    </div>
+
     <script>
       const stop = document.title;
 
@@ -19,6 +27,33 @@
       const trainLine = "{{ train_line }}";
       const backLink = document.getElementById("backLink");
       backLink.href = `../${trainLine}`;
+
+      fetch(`/get_data/${trainLine}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const uptownContainer = document.querySelector(".uptown");
+          const downtownContainer = document.querySelector(".downtown");
+
+          const uptownStopData = data[0][1].find(
+            (entry) => entry.stop === `${stop} Uptown`
+          );
+
+          const downtownStopData = data[0][1].find(
+            (entry) => entry.stop === `${stop} Downtown`
+          );
+          const uptownArrivalTimes = uptownStopData.arrival_times.join(", ");
+          const downtownArrivalTimes =
+            downtownStopData.arrival_times.join(", ");
+          uptownContainer.textContent = `Uptown: ${uptownArrivalTimes}`;
+          downtownContainer.textContent = `Downtown: ${downtownArrivalTimes}`;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          const uptownContainer = document.querySelector(".uptown");
+          const downtownContainer = document.querySelector(".downtown");
+          uptownContainer.textContent = `Uptown: No Trains Running on this stop`;
+          downtownContainer.textContent = `Downtown: No Trains Running on this stop`;
+        });
     </script>
   </body>
 </html>
