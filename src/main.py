@@ -14,6 +14,11 @@ def train_schedule(train_line):
     return render_template("subway_line.html", train_line=train_line)
 
 
+@app.route("/train/<train_line>/<stop>")
+def train_stops(train_line, stop):
+    return render_template("stop.html", train_line=train_line, stop=stop)
+
+
 # Api endpoint
 @app.route("/get_data/<subway_line>")
 def get_data(subway_line):

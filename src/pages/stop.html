@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ stop }}</title>
+  </head>
+  <body>
+    <div class="stop-name"></div>
+    <a id="backLink" href="../">
+      <button class="back-button">Back</button>
+    </a>
+    <script>
+      const stop = document.title;
+
+      const stopNameDiv = document.querySelector(".stop-name");
+      stopNameDiv.innerHTML = stop;
+
+      const trainLine = "{{ train_line }}";
+      const backLink = document.getElementById("backLink");
+      backLink.href = `../${trainLine}`;
+    </script>
+  </body>
+</html>

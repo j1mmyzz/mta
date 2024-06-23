@@ -927,15 +927,12 @@
         stops = [];
       }
 
-      console.log(stops); // Check the assigned stops array
-
       stops.forEach((stop) => {
         const button = document.createElement("button");
         button.textContent = stop;
 
-        // delete this later
-        button.addEventListener("click", () => {
-          alert(`You clicked on ${stop}`);
+        button.addEventListener("click", function () {
+          document.location.href = `/train/${subwayLine}/${stop}`;
         });
 
         stationsContainer.appendChild(button);
